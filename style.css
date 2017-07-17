@@ -1,0 +1,13 @@
+body{
+  background-color: #72dbdd;
+  }
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 3em;
+  background-color: #fff;
+  border-left: 15px dotted #72dbdd;
+}
