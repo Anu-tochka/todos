@@ -21,3 +21,15 @@ li{
   font: bold italic 150% serif;
   margin-right: 4em;
 }
+button{
+  background-color: #ff3;
+  width: 10em;
+  border: none;
+  padding: 1em;
+  margin-left: 2.2em;
+  cursor: pointer;
+  font-size: 11pt; 
+   }
+.opacity{
+  opacity: 0.5;
+}
