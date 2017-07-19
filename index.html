@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" type="text/css" href="style.css" media = "screen">
+	<title>My first Vue app</title>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+</head>
+<body>
+	<div class="container" id="app">
+		<ul v-if="todos && todos.length">
+			<li v-for="todo of todos">
+				<span v-if="todo.completed === true" style="opacity: 0.2;">{{todo.title}}</span> <!--  -->
+				<span v-else>{{todo.title}}</span> 
+				<button v-on:click="todo.completed = !todo.completed">нажми</button>
+			</li>
+
+		</ul>
+	</div>
+
+	<script>
+	new Vue({
+		data: () => ({
+			todos: [],
+			errors: []
+		}),
+		el: '#app',
+			created() {
+			axios.get(`http://jsonplaceholder.typicode.com/todos`)
+			.then(response => {
+			// JSON-ответ автоматически анализируется
+				this.todos = response.data
+			})
+			.catch(e => {
+				this.errors.push(e)
+			})
+		}
+	})
+	</script>
+</body>
+</html>
