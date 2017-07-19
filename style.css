@@ -2,13 +2,10 @@ body{
     background-color: #72dbdd;
 }
 .container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 0 2em 0;
+    padding: 0.1em 0 1em 0;
     margin: 4em;
     background-color: #fff;
-    border-left: 15px dotted #72dbdd;
+    border-left: 15px dotted #72dbdd; /*имитация листа, вырванного из тетради на пружинке */
 }
 ul{
     list-style: none;
@@ -16,16 +13,18 @@ ul{
 }
 li{
     border-bottom: 2px solid #1f00d0;
-    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font: bold italic 150% serif;
-    margin-right: 4em;
+    margin-right: 4em; /* оставляем поля справа */
+    padding: 0 0.3em 0 0.7em; /* учтено, что у кнопки часть отступа формируется за счёт белой границы */
 }
 button{
     background-color: #ff3;
     width: 10em;
-    border: none;
+    border: 0.7em solid #fff; /* белая граница не даёт кнопке прилипать к линиям */
     padding: 1em;
-    margin-left: 2.2em;
     cursor: pointer;
     font-size: 11pt; 
 }
